@@ -1,8 +1,9 @@
-<<<<<<< HEAD
+
 #Harjoitustyön README
 
 *Tämä* on **readme**
 
-=======
+[komentorivi](https://github.com/karhis/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
->>>>>>> 7ee5d25a48910743138e8f5000af9e8a465810b2
+
+[gitlog](https://github.com/karhis/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
