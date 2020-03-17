@@ -1,0 +1,114 @@
+commit fffd737ee84f25507d69e7b8acf835a47079711d
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:44:09 2020 +0200
+
+    file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 836ab3363d029acdce65723b12f86a5a33d4073e
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:41:38 2020 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit a88bbdd02a820f9f729db3c346460a32048976fc
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:36:27 2020 +0200
+
+    muutoksia
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 9dd6947a5a0f5c0a7a5d490ddcdb8218c0f7b1e6
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:35:24 2020 +0200
+
+    eka
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9c47c0e8b9c969bd5a4e501359445b4fd7c8965d
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:33:32 2020 +0200
+
+    toinen.txt poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2ccbfc2a414542e5216e3eaf34969a894132b0c5
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:32:09 2020 +0200
+
+    lisäys ja poisto
+
+ tiedosto.txt | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit f9c92131a5be3b9beb1fc438a5dc13f59936cfcc
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:29:58 2020 +0200
+
+    lorem ipsum
+
+ tiedosto.txt | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 10bc1aaaea0d64a571423a28929bc1406510878d
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:26:56 2020 +0200
+
+    stuff lisäys
+
+ stuff/asd.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 96bc0ec7015bad58681c6315628d79aa3de859ae
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:25:57 2020 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit cd19876e5d8697b2bbd6f763e47a9415796fe13d
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:24:34 2020 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 22bfe49c7ceb4d61e5c1dd4014b98c647f551cdd
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:23:16 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 82f94659b93737b98d3ddca891a40e41bba9accd
+Author: karhis <otsopa@gmail.com>
+Date:   Tue Mar 17 15:21:19 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
