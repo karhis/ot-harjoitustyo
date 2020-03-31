@@ -69,12 +69,12 @@ public class Sudoku {
             if (j < 3) {
                 j = 3;
             }
-        } else if (i < 9 - 3) {
+        } else if (i < 6) {
             if (j == (int) (i / 3) * 3) {
                 j = j + 3;
             }
         } else {
-            if (j == 9 - 3) {
+            if (j == 6) {
                 i = i + 1;
                 j = 0;
                 if (i >= 9) {
