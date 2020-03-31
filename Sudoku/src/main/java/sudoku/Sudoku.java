@@ -1,16 +1,18 @@
+package sudoku;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+
 
 import java.lang.*;
+import java.util.Arrays;
 
 public class Sudoku {
 
     int[] board[];
     int K;
+    int sum;
+    int[][] answer;
 
-    Sudoku(int K) {
+    public Sudoku(int K) {
         this.K = K;
         board = new int[9][9];
     }
@@ -18,9 +20,23 @@ public class Sudoku {
     public void generate() {
         fillCross();
         fill(0, 3);
+        saveAnswer();
         maskNumbers();
     }
-
+    
+    public int getSum() {
+        sum = 0;
+        for (int r=0; r < answer.length; r++) {
+            for (int c=0; c < answer[r].length; c++) {
+                sum += answer[r][c];
+            }
+    }
+        return sum;
+    }
+    void saveAnswer() {
+       answer = Arrays.stream(board).map(int[]::clone).toArray(int[][]::new); 
+    }
+    
     void fillCross() {
         for (int i = 0; i < 9; i = i + 3) {
             fillMatrix(i, i);
@@ -138,6 +154,16 @@ public class Sudoku {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+    
+        public void printAnswer() {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                System.out.print(answer[i][j] + " ");
             }
             System.out.println();
         }
