@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import sudoku.Stats;
 import sudoku.Sudoku;
 /**
  *
@@ -13,15 +14,47 @@ import sudoku.Sudoku;
  */
 public class SudokuTest {
     Sudoku ruutu;
-    @Before
-    public void setUp() {
-        Sudoku ruutu = new Sudoku(0);
-        ruutu.generate(); 
+    Stats player;
+     
+    @Test
+    public void percentageWorks() {
+        Stats player = new Stats();  
+        player.gameLost();
+        assertEquals(0, player.ratio());
     }
     
-@Test
-public void sumTest() {
-    assertEquals(405, ruutu.getSum());   
-}
+    @Test
+    public void percentageWorks2() {
+     Stats player = new Stats();  
+     player.gameWon();
+     assertEquals(100, player.ratio());
+    }
+    
+    @Test
+    public void percentageWorks3() {
+        Stats player = new Stats();  
+        player.gameWon();
+        player.gameLost();
+        assertEquals(50, player.ratio());
+    }
+    
+    @Test
+    public void addWinWorks() {
+        Stats player = new Stats();  
+        player.gameWon();
+        assertEquals(1, player.wonStats());
+    }
+    
+    @Test
+    public void addLossWorks() {
+        Stats player = new Stats();  
+        player.gameLost();
+        assertEquals(1, player.gameStats());
+        
+    }
+    
+    
+    
+        
     
 }
