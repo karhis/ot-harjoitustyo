@@ -1,4 +1,4 @@
 # Arkkitehtuuri
 ## Rakenne
 
-![Diagrammi](https://ibb.co/K2mtw5M)
+![Diagrammi](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuridiagrammi.png)
