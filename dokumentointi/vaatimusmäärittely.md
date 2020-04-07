@@ -4,7 +4,7 @@ Sovelluksessa ratkaistaan generoituja Sudokuja.
 ## Käyttäjät
 Sovelluksella on vain yksi käyttäjärooli eli normaali käyttäjä.
 ## Perusversion tarjoama toiminnallisuus
-* Sovellus luo ratkaistavia Sudokuja
+* [x] Sovellus luo ratkaistavia Sudokuja			
 * Käyttäjä pystyy ratkaisemaan Sudokun täyttämällä kaikki ruudut
 * Käyttäjä voi luovuttaa ja / tai aloittaa alusta
 * Sudokun tyhjiin ruutuihin voi "merkata" mahdollisia niihin sopivia numeroita, joka eroaa normaalin luvun sijoittamisesta ruutuun

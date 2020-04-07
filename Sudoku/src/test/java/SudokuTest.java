@@ -6,8 +6,8 @@
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import sudoku.Stats;
-import sudoku.Sudoku;
+import data.Stats;
+import sudoku.main.Sudoku;
 /**
  *
  * @author Otso

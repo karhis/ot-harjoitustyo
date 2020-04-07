@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudoku;
+package data;
 
 /**
  *
@@ -14,13 +14,12 @@ public class Stats {
     int played;
 
     public Stats() {
-     wins = 0;
-     played = 0;
+        wins = 0;
+        played = 0;
     }
     
     public void gameWon() {
         wins++;
-        played++;
     }
     
     public void gameLost() {

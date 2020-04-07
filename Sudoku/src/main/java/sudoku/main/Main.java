@@ -5,8 +5,7 @@
  */
 package sudoku.main;
 
-import sudoku.Sudoku;
-import sudoku.SudokuUi;
+import gui.SudokuUi;
 /**
  *
  * @author Otso
@@ -18,11 +17,6 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Sudoku sudoku = new Sudoku(38); 
-        sudoku.generate();
-        System.out.println(sudoku.getSum());
-        sudoku.printAnswer();
-        sudoku.print(); 
         SudokuUi.main(args);
     }
     

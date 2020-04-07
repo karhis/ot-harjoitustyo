@@ -1,8 +1,12 @@
-Päivä	|Tunnit	|Kuvaus				
+﻿Päivä	|Tunnit	|Kuvaus				
 |-------|-------|-------------------------------|
 |24.3	|1	|Vaatimusmäärittelyn luonti	|
 |27.3	|2	|JavaFX kertausta		|
 |28.3	|3	|Sudokualgoritmin opiskelu	|
-|31.3 |7  |Algoritmin rakennus ja pääasiassa mavenin/JavaFX kanssa taistelua |
+|31.3 	|7  	|Algoritmin rakennus ja pääasiassa mavenin/JavaFX kanssa taistelua |
+|5.4	|2	|JavaFX opiskelua		|
+|7.4	|6	|UI:n rakentamista		|
+|-------|-------|-------------------------------|
+|yhteensä|21	|tuntia				|
 
 

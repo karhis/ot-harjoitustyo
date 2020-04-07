@@ -1,6 +1,4 @@
-package sudoku;
-
-
+package sudoku.main;
 
 import java.lang.*;
 import java.util.Arrays;
@@ -8,12 +6,12 @@ import java.util.Arrays;
 public class Sudoku {
 
     int[] board[];
-    int K;
+    int k;
     int sum;
     int[][] answer;
 
-    public Sudoku(int K) {
-        this.K = K;
+    public Sudoku(int k) {
+        this.k = k;
         board = new int[9][9];
     }
 
@@ -23,20 +21,21 @@ public class Sudoku {
         saveAnswer();
         maskNumbers();
     }
-    
+
     public int getSum() {
         sum = 0;
-        for (int r=0; r < answer.length; r++) {
-            for (int c=0; c < answer[r].length; c++) {
+        for (int r = 0; r < answer.length; r++) {
+            for (int c = 0; c < answer[r].length; c++) {
                 sum += answer[r][c];
             }
-    }
+        }
         return sum;
     }
+
     void saveAnswer() {
-       answer = Arrays.stream(board).map(int[]::clone).toArray(int[][]::new); 
+        answer = Arrays.stream(board).map(int[]::clone).toArray(int[][]::new);
     }
-    
+
     void fillCross() {
         for (int i = 0; i < 9; i = i + 3) {
             fillMatrix(i, i);
@@ -136,7 +135,7 @@ public class Sudoku {
     }
 
     public void maskNumbers() {
-        int count = K;
+        int count = k;
         while (count != 0) {
             int position = randomNumber(9 * 9) - 1;
 
@@ -159,8 +158,8 @@ public class Sudoku {
         }
         System.out.println();
     }
-    
-        public void printAnswer() {
+
+    public void printAnswer() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 System.out.print(answer[i][j] + " ");
@@ -168,6 +167,21 @@ public class Sudoku {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public String returnCell(int x, int y) {
+        if (board[x][y] == 0) {
+            return "  ";
+        }
+        return String.valueOf(board[x][y]);
+    }
+
+    public void setNumber(int i, int j, int z) {
+        board[i][j] = z;
+    }
+
+    public boolean checkAnswer() {
+        return Arrays.equals(board, answer);
     }
 
 }
