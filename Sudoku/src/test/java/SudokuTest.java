@@ -16,27 +16,8 @@ public class SudokuTest {
     Sudoku ruutu;
     Stats player;
      
-    @Test
-    public void percentageWorks() {
-        Stats player = new Stats();  
-        player.gameLost();
-        assertEquals(0, player.ratio());
-    }
+
     
-    @Test
-    public void percentageWorks2() {
-     Stats player = new Stats();  
-     player.gameWon();
-     assertEquals(100, player.ratio());
-    }
-    
-    @Test
-    public void percentageWorks3() {
-        Stats player = new Stats();  
-        player.gameWon();
-        player.gameLost();
-        assertEquals(50, player.ratio());
-    }
     
     @Test
     public void addWinWorks() {

@@ -39,7 +39,7 @@ public class SudokuUi extends Application {
         date = Calendar.getInstance().getTime();
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
             counter = Calendar.getInstance().getTime().getTime() - date.getTime();
-                stage.setTitle(
+            stage.setTitle(
                         "Sudoku: " + String.valueOf(TimeUnit.SECONDS.convert(counter, TimeUnit.MILLISECONDS)));
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
@@ -72,7 +72,7 @@ public class SudokuUi extends Application {
                       "-fx-border-insets: 1;" + 
                       "-fx-border-radius: 5;" + 
                       "-fx-border-color: black;"
-                        );
+        );
         
         
         //BorderPane
@@ -97,7 +97,6 @@ public class SudokuUi extends Application {
         stats.setSpacing(10);
         stats.getChildren().add(new Label("Games: " + String.valueOf(history.gameStats())));
         stats.getChildren().add(new Label("Won: " + String.valueOf(history.wonStats())));
-        stats.getChildren().add(new Label("%: " + String.valueOf(history.gameStats())));
         window.setBottom(stats);
 
         //Buttons

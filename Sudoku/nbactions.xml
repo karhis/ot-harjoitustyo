@@ -9,4 +9,19 @@
                 
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-jar</actionName>
+            <displayName>jar</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>package</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-testikattavuus</actionName>
+            <displayName>testikattavuus</displayName>
+            <goals>
+                <goal>jacoco:report</goal>
+            </goals>
+        </action>
     </actions>

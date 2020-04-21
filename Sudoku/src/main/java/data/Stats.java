@@ -34,7 +34,4 @@ public class Stats {
         return wins;
     }
     
-    public int ratio() {
-        return (int) (wins * 1.0 / played * 100);
-    }
 }
