@@ -6,7 +6,11 @@
 |31.3 	|7  	|Algoritmin rakennus ja pääasiassa mavenin/JavaFX kanssa taistelua |
 |5.4	|2	|JavaFX opiskelua		|
 |7.4	|6	|UI:n rakentamista		|
+|16.4 |4  |Yritys edistää toiminnallisuutta |
+|18.4 |2  |Yritys edistää toiminnallisuutta |
+|20.4 |5  |Toiminnallisuus ei toimi vieläkään |
+|21.4 |3  |Eikä vieläkään |
 |-------|-------|-------------------------------|
-|yhteensä|21	|tuntia				|
+|yhteensä|35	|tuntia				|
 
 
