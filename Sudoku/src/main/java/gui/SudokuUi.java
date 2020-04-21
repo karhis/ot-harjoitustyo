@@ -16,7 +16,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import data.Stats;
-import javafx.scene.control.Separator;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
 import sudoku.main.Sudoku;
 
 /**
@@ -24,9 +30,22 @@ import sudoku.main.Sudoku;
  * @author Otso
  */
 public class SudokuUi extends Application {
-
+    private long counter = 0;
     GridPane box;
-
+    private Date date;
+    private Timeline timeline;
+    
+    private void timer(Stage stage) {
+        date = Calendar.getInstance().getTime();
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            counter = Calendar.getInstance().getTime().getTime() - date.getTime();
+                stage.setTitle(
+                        "Sudoku: " + String.valueOf(TimeUnit.SECONDS.convert(counter, TimeUnit.MILLISECONDS)));
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
+    
     @Override
     public void start(Stage ikkuna) {
         Stats history = new Stats();
@@ -67,6 +86,7 @@ public class SudokuUi extends Application {
         Button aloita = new Button("Start");
         aloita.setOnAction((ActionEvent event) -> {
             ikkuna.setScene(game);
+            timer(ikkuna);
         });
 
         Scene startScreen = new Scene(aloita, 200, 100);
@@ -94,6 +114,8 @@ public class SudokuUi extends Application {
         topRow.getChildren().add(giveUp);
         giveUp.setOnAction((ActionEvent event) -> {
             history.gameLost();
+            timeline.stop();
+            ikkuna.setTitle("Sudoku");
             ikkuna.setScene(startScreen);
         });
         topRow.setSpacing(10);
