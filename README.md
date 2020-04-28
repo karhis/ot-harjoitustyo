@@ -12,6 +12,7 @@ Sudokulle rakennettu graafinen näkymä, toistaiseksi toiminnallisuus on rajattu
 
 ## Releaset
 [Viikko 5](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko5)  
+[Viikko 6](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Komentorivitoiminnot
 ### Testaus
