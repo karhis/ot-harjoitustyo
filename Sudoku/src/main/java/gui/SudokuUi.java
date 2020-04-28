@@ -22,6 +22,9 @@ import java.util.concurrent.TimeUnit;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import sudoku.main.Sudoku;
 
@@ -35,6 +38,7 @@ public class SudokuUi extends Application {
     private Date date;
     private Timeline timeline;
     
+    
     private void timer(Stage stage) {
         date = Calendar.getInstance().getTime();
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
@@ -45,23 +49,46 @@ public class SudokuUi extends Application {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
-    
+
     @Override
-    public void start(Stage ikkuna) {
+    public void start(Stage screen) {
+        
         Stats history = new Stats();
         Sudoku sudoku = new Sudoku(38);
         sudoku.generate();
 
         //Set title
-        ikkuna.setTitle("Sudoku");
+        screen.setTitle("Sudoku");
 
         //Sudoku
         GridPane box = new GridPane();
         for (int x = 0; x < 9; x++) {
+            
             for (int y = 0; y < 9; y++) {
-                box.add(new Button(sudoku.returnCell(x, y)), x, y);
+                Button r = new Button(sudoku.returnCell(x, y));
+                if ("  ".equals(sudoku.returnCell (x, y))) {
+                                    
+                r.setOnMouseClicked((MouseEvent t) -> {
+                    if ("  ".equals(r.getText()) || "9".equals(r.getText())) {
+                        r.setText("1");
+                        
+                    }
+                    else {
+                        r.setText(String.valueOf(Integer.valueOf(r.getText())+1));
+                        
+                    }
+                }); 
+                }
+                
+                else {
+                    r.setStyle("-fx-background-color: #a19e9d");
+                }
+                
+                box.add(r, x, y);
             }
         }
+
+        
         box.setHgap(2);
         box.setVgap(2);
         box.setAlignment(Pos.CENTER);
@@ -83,22 +110,26 @@ public class SudokuUi extends Application {
         Scene game = new Scene(window);
 
         //Start button
-        Button aloita = new Button("Start");
-        aloita.setOnAction((ActionEvent event) -> {
-            ikkuna.setScene(game);
-            timer(ikkuna);
+        Button start = new Button("Start");
+        start.setOnAction((ActionEvent event) -> {
+            
+            screen.setScene(game);
+            timer(screen);
         });
 
-        Scene startScreen = new Scene(aloita, 200, 100);
-        ikkuna.setScene(startScreen);
-        ikkuna.show();
+        Scene startScreen = new Scene(start, 200, 100);
+        screen.setScene(startScreen);
+        screen.show();
         //Stats
         HBox stats = new HBox();
         stats.setSpacing(10);
         stats.getChildren().add(new Label("Games: " + String.valueOf(history.gameStats())));
         stats.getChildren().add(new Label("Won: " + String.valueOf(history.wonStats())));
         window.setBottom(stats);
-
+        
+        
+        
+        
         //Buttons
         HBox topRow = new HBox();
         Button checkAnswer = new Button("Check");
@@ -114,14 +145,25 @@ public class SudokuUi extends Application {
         giveUp.setOnAction((ActionEvent event) -> {
             history.gameLost();
             timeline.stop();
-            ikkuna.setTitle("Sudoku");
-            ikkuna.setScene(startScreen);
+            screen.setTitle("Sudoku");
+            screen.setScene(startScreen);
         });
         topRow.setSpacing(10);
 
         window.setTop(topRow);
 
     }
+    public void compareBoards() {
+     int[][] answer = new int[9][9];
+     for (int x = 0; x < 9; x++) {  
+      for (int y = 0; y < 9; y++) {
+         
+      }   
+         
+     }
+        
+    }
+    
 
     public static void main(String[] args) {
         launch(args);
