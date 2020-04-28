@@ -24,4 +24,12 @@
                 <goal>jacoco:report</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-jdoc</actionName>
+            <displayName>jdoc</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>javadoc:javadoc</goal>
+            </goals>
+        </action>
     </actions>
