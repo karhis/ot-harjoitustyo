@@ -12,7 +12,11 @@
 |21.4 |3  |Eikä vieläkään |
 |27.4 |3  |Numeroiden lisääminen onnistuu |
 |28.4 |6  |Yritys saada iteroitua numeroiden arvoja vertailtavaksi  |
+|3.5  |2  |Ui:n rakennusta  |  
+|7.5  |6  |Ratkaistun sudokun rakentaminen  |
+|9.5  |4  |Siivoamista ja hienosäätöä |
+|10.5 |6  |Dokumentointi ja valmistelu  |
 |-------|-------|-------------------------------|
-|yhteensä|44	|tuntia				|
+|yhteensä|62	|tuntia				|
 
 
