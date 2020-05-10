@@ -16,9 +16,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import data.Stats;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -36,6 +40,8 @@ public class SudokuUi extends Application {
     GridPane box;
     private Date date;
     private Timeline timeline;
+    final int[][] array = new int[9][9];
+    private HashMap<Integer, Button> buttons;
 
     private void timer(Stage stage) {
         date = Calendar.getInstance().getTime();
@@ -48,41 +54,35 @@ public class SudokuUi extends Application {
         timeline.play();
     }
 
-    @Override
-    public void start(Stage screen) {
+    public void generateBox(GridPane box, Sudoku sudoku) {
 
-        Stats history = new Stats();
-        Sudoku sudoku = new Sudoku(38);
-        sudoku.generate();
-
-        //Set title
-        screen.setTitle("Sudoku");
-
-        //Sudoku
-        GridPane box = new GridPane();
+        int iterator = 0;
         for (int x = 0; x < 9; x++) {
 
             for (int y = 0; y < 9; y++) {
                 Button r = new Button(sudoku.returnCell(x, y));
-                if ("  ".equals(sudoku.returnCell(x, y))) {
+                r.setId(String.valueOf(iterator));
 
+                if ("  ".equals(sudoku.returnCell(x, y))) {
+                    
                     r.setOnMouseClicked((MouseEvent t) -> {
                         if ("  ".equals(r.getText()) || "9".equals(r.getText())) {
                             r.setText("1");
 
                         } else {
                             r.setText(String.valueOf(Integer.valueOf(r.getText()) + 1));
-
                         }
                     });
                 } else {
                     r.setStyle("-fx-background-color: #a19e9d");
                 }
 
+
+                buttons.put(iterator, r);
+                iterator++;
                 box.add(r, x, y);
             }
         }
-
         box.setHgap(2);
         box.setVgap(2);
         box.setAlignment(Pos.CENTER);
@@ -94,18 +94,46 @@ public class SudokuUi extends Application {
                 + "-fx-border-radius: 5;"
                 + "-fx-border-color: black;"
         );
+    }
+    
+    public void statsBox(BorderPane window, Stats history) {
+        //Stats
+        HBox stats = new HBox();
+        stats.setSpacing(10);
+        stats.getChildren().add(new Label("Games: " + String.valueOf(history.gameStats())));
+        stats.getChildren().add(new Label("Won: " + String.valueOf(history.wonStats())));
+        window.setBottom(stats);  
+        
+    }
+
+    @Override
+    public void start(Stage screen) throws IOException {
+
+        Stats history = new Stats();
+        history.readWins();
+        history.readGames();
+        history.getStats();
+        Sudoku sudoku = new Sudoku(38);
+        sudoku.generate();
+        int iterator = 0;
+        buttons = new HashMap<Integer, Button>();
+
+        //Set title
+        screen.setTitle("Sudoku");
+
+        //Sudoku
+        GridPane box = new GridPane();
+        generateBox(box, sudoku);
 
         //BorderPane
         BorderPane window = new BorderPane();
-
         window.setCenter(box);
 
         Scene game = new Scene(window);
-
         //Start button
         Button start = new Button("Start");
         start.setOnAction((ActionEvent event) -> {
-
+            statsBox(window, history);
             screen.setScene(game);
             timer(screen);
         });
@@ -113,30 +141,60 @@ public class SudokuUi extends Application {
         Scene startScreen = new Scene(start, 200, 100);
         screen.setScene(startScreen);
         screen.show();
-        //Stats
-        HBox stats = new HBox();
-        stats.setSpacing(10);
-        stats.getChildren().add(new Label("Games: " + String.valueOf(history.gameStats())));
-        stats.getChildren().add(new Label("Won: " + String.valueOf(history.wonStats())));
-        window.setBottom(stats);
+        
 
         //Buttons
         HBox topRow = new HBox();
+
         Button checkAnswer = new Button("Check");
         checkAnswer.setOnAction((ActionEvent check) -> {
+            int z = 0;
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if ("  ".equals(buttons.get(z).getText())) {
+                        sudoku.setNumber(i, j, 0);
+                    } else {
+                        sudoku.setNumber(i, j, Integer.valueOf(buttons.get(z).getText()));
+                        z++;
+                    }
+                }
+            }
             if (sudoku.checkAnswer() == true) {
-                history.gameLost();
-                history.gameWon();
+                try {
+                    history.gameWon();
+                    //Victory button
+                    Button youWon = new Button("Sudoku completed in " + String.valueOf(TimeUnit.SECONDS.convert(counter, TimeUnit.MILLISECONDS)) + " seconds!");
+                    youWon.setStyle("-fx-background-color: #26c902; ");
+                    Scene victory = new Scene(youWon, 200, 100);
+                    screen.setScene(victory);
+                    youWon.setOnAction((ActionEvent event) -> {
+                        sudoku.resetGame();
+                        sudoku.generate();
+                        generateBox(box, sudoku);
+                        screen.setTitle("Sudoku");
+                        screen.setScene(startScreen);
+                        timer(screen);
+                    });
+                } catch (IOException ex) {
+                    Logger.getLogger(SudokuUi.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         Button giveUp = new Button("Give up");
         topRow.getChildren().add(checkAnswer);
         topRow.getChildren().add(giveUp);
         giveUp.setOnAction((ActionEvent event) -> {
-            history.gameLost();
-            timeline.stop();
-            screen.setTitle("Sudoku");
-            screen.setScene(startScreen);
+            try {
+                history.gameLost();
+                timeline.stop();
+                sudoku.resetGame();
+                sudoku.generate();
+                generateBox(box, sudoku);
+                screen.setTitle("Sudoku");
+                screen.setScene(startScreen);
+            } catch (IOException ex) {
+                Logger.getLogger(SudokuUi.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
         topRow.setSpacing(10);
 

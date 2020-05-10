@@ -4,13 +4,13 @@ Sovelluksessa ratkaistaan generoituja Sudokuja.
 ## K‰ytt‰j‰t
 Sovelluksella on vain yksi k‰ytt‰j‰rooli eli normaali k‰ytt‰j‰.
 ## Perusversion tarjoama toiminnallisuus
-* [x] Sovellus luo ratkaistavia Sudokuja			
+* Sovellus luo ratkaistavia Sudokuja			
 * K‰ytt‰j‰ pystyy ratkaisemaan Sudokun t‰ytt‰m‰ll‰ kaikki ruudut
 * K‰ytt‰j‰ voi luovuttaa ja / tai aloittaa alusta
-* Sudokun tyhjiin ruutuihin voi "merkata" mahdollisia niihin sopivia numeroita, joka eroaa normaalin luvun sijoittamisesta ruutuun
-* Ruutuihin sijoitettuja lukuja voi vaihtaa tai ruudun voi tyhjent‰‰
 * Ratkaisuun k‰ytetty aika on n‰kyvill‰, ja ilmoitetaan ratkaisun j‰lkeen
+* Sovellus n‰ytt‰‰ ja tallentaa pelien ja voittojen m‰‰r‰n.
 ## Jatkokehitysideoita
+* Sudokun tyhjiin ruutuihin voi "merkata" mahdollisia niihin sopivia numeroita, joka eroaa normaalin luvun sijoittamisesta ruutuun
 * Eri vaikeustasoja
 * Nopeimmat ajat lista
 * "Vinkki" painike
