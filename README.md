@@ -10,7 +10,7 @@ Sovelluksella voit ratkaista sudokuja ja seurata kuinka monta olet yrittänyt ra
 
 ## Releaset
 [Viikko 5](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko5)  
-[Viikko 6](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko6)
+[Viikko 6](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko6)  
 [Viikko 7](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko7)
 ## Komentorivitoiminnot
 ### Testaus
