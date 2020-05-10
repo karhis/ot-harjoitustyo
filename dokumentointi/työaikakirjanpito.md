@@ -10,7 +10,9 @@
 |18.4 |2  |Yritys edistää toiminnallisuutta |
 |20.4 |5  |Toiminnallisuus ei toimi vieläkään |
 |21.4 |3  |Eikä vieläkään |
+|27.4 |3  |Numeroiden lisääminen onnistuu |
+|28.4 |6  |Yritys saada iteroitua numeroiden arvoja vertailtavaksi  |
 |-------|-------|-------------------------------|
-|yhteensä|35	|tuntia				|
+|yhteensä|44	|tuntia				|
 
 
