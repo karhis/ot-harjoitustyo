@@ -7,6 +7,7 @@ Sovelluksella voit ratkaista sudokuja ja seurata kuinka monta olet yrittänyt ra
 [työaikakirjanpito](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)  
 [vaatimusmäärittely](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/vaatimusm%C3%A4%C3%A4rittely.md)  
 [arkkitehtuuri](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)  
+[testausdokumentti](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/testausdokumentti.md)  
 
 ## Releaset
 [Viikko 5](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko5)  
