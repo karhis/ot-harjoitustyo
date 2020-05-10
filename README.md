@@ -1,11 +1,9 @@
 ﻿# Sudoku
-**Itse sudokuluokan testaaminen on osoittautunut hankalaksi, joten toistaiseksi ohjelma sisältää vain yksinkertaisia tilastointiin liittyviä testejä.**  
-Sudokulle rakennettu graafinen näkymä, toistaiseksi toiminnallisuus on rajattua.
-**JAR-tiedosto toimii moitteettomasti Mintillä, laitoksen virtuaalikoneella ohjelma näyttää oudolta, en tiedä vielä miksi.**
+Sovelluksella voit ratkaista sudokuja ja seurata kuinka monta olet yrittänyt ratkaista tai onnistuneesti ratkaissut.
 
 
 ## Dokumentaatio
-
+[käyttöohje](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)  
 [työaikakirjanpito](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)  
 [vaatimusmäärittely](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/vaatimusm%C3%A4%C3%A4rittely.md)  
 [arkkitehtuuri](https://github.com/karhis/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)  
@@ -13,7 +11,7 @@ Sudokulle rakennettu graafinen näkymä, toistaiseksi toiminnallisuus on rajattu
 ## Releaset
 [Viikko 5](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko5)  
 [Viikko 6](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko6)
-
+[Viikko 7](https://github.com/karhis/ot-harjoitustyo/releases/tag/viikko7)
 ## Komentorivitoiminnot
 ### Testaus
 Testit suoritetaan komennolla  
